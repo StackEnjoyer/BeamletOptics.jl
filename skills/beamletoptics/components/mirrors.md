@@ -5,6 +5,10 @@ including its back and edges. Curved mirrors can have a central hole via `hole_d
 
 ## Plano
 
+The pose point is the reflecting face, also after a rotation about it: place the face with
+`translate_to3d!`. The beam must arrive from −y of the mirror; from the substrate side it hits the
+back, one thickness behind the face, which reflects as well.
+
 | Constructor | Geometry at spawn |
 |-------------|-------------------|
 | `RoundPlanoMirror(diameter, thickness; hole_diameter = nothing)` | reflecting face at y = 0, normal along y, substrate towards +y |

@@ -17,7 +17,9 @@ end
     RectangularPlanoMirror(width, height, thickness)
 
 Constructs a rectangular plano [`Mirror`](@ref) based on the input dimensions.
-The front reflecting surface is normal to the y-axis and lies at the origin.
+The front reflecting surface is normal to the y-axis and lies at the origin, the pose point of the mirror;
+the substrate extends from it by `thickness` towards +y, so the beam arrives from −y. A beam from
+the substrate side hits the back, which reflects as well, one `thickness` behind the face.
 
 # Arguments
 
@@ -40,7 +42,9 @@ end
     SquarePlanoMirror(width, thickness)
 
 Constructs a square plano [`Mirror`](@ref) with equal width and height.
-The front reflecting surface is normal to the y-axis and lies at the origin.
+The front reflecting surface is normal to the y-axis and lies at the origin, the pose point of the mirror;
+the substrate extends from it by `thickness` towards +y, so the beam arrives from −y. A beam from
+the substrate side hits the back, which reflects as well, one `thickness` behind the face.
 See also [`RectangularPlanoMirror`](@ref).
 
 # Arguments
@@ -56,7 +60,10 @@ end
     RoundPlanoMirror(diameter, thickness; hole_diameter=nothing)
 
 Constructs a round plano [`Mirror`](@ref) with a flat reflecting surface and perfect reflectivity (R = 1).
-The reflecting surface is modeled using a [`BeamletOptics.PlanoSurfaceSDF`](@ref).
+The reflecting surface is modeled using a [`BeamletOptics.PlanoSurfaceSDF`](@ref): it is normal to the y-axis and
+lies at the origin, the pose point of the mirror, also after the mirror is rotated about it;
+the substrate extends from it by `thickness` towards +y, so the beam arrives from −y. A beam from
+the substrate side hits the back, which reflects as well, one `thickness` behind the face.
 
 # Arguments
 

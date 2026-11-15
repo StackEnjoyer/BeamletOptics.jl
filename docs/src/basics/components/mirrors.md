@@ -35,6 +35,8 @@ A category of mirrors with a flat reflecting surface. A round version of this mi
 RoundPlanoMirror(::Real, ::Real)
 ```
 
+The pose point of a plano mirror is its reflecting face: after `translate_to3d!` the face is at the given position, also when the mirror is rotated about it. The substrate lies behind the face, towards +y of the mirror. A beam that comes from the substrate side hits the back of the mirror, which reflects as well: the path is then one substrate thickness shorter than to the face.
+
 Below, a trivial example of a beam path propagating through a system of Ø1"-mirrors mounted in [KM100CP/M](https://www.thorlabs.de/thorproduct.cfm?partnumber=KM100CP/M#ad-image-0) kinematic mounts is shown (e.g. [PF10-03-P01](https://www.thorlabs.com/thorproduct.cfm?partnumber=PF10-03-P01)). Note that the mounts are modeled as [`NonInteractableObject`](@ref)s.
 
 ![Plano mirror showcase](plano_mirror_showcase.png)
